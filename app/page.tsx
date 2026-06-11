@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { LeadForm } from "@/components/forms/LeadForm";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { FloorPlanGrid } from "@/components/sections/FloorPlanGrid";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { MapEmbed } from "@/components/ui/MapEmbed";
 import {
@@ -60,37 +60,7 @@ export default function HomePage() {
         ]}
       />
 
-      <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-forest-900 text-white">
-        <Image
-          src={IMAGES.hero}
-          alt="Cornerstone Towns Brampton new freehold townhomes by Primont Homes"
-          fill
-          priority
-          className="object-cover opacity-25"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-forest-900/95 via-forest-900/80 to-forest-900/40" />
-        <div className="container-site relative z-10 py-24">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-gold-400">
-            Launching {PROJECT.launch}
-          </p>
-          <h1 className="max-w-3xl font-heading text-4xl font-semibold leading-[1.1] md:text-6xl">
-            New Freehold Townhomes in Northwest Brampton
-          </h1>
-          <p className="mt-5 max-w-xl text-lg text-white/70">
-            Cornerstone Towns by Primont Homes — {PROJECT.phase1Units} freehold
-            townhomes with Futura smart home technology included as standard.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link href="/register" className="btn-primary bg-white text-forest-900 hover:bg-white/90">
-              Register for VIP Access
-            </Link>
-            <Link href="/floor-plans" className="btn-secondary border-white/30 text-white hover:bg-white/10 hover:text-white">
-              View Floor Plans
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <section className="border-b border-neutral-200/80 py-5" aria-label="Quick facts">
         <div className="container-site">
@@ -197,24 +167,27 @@ export default function HomePage() {
 
       <section className="section-padding bg-forest-900 text-white">
         <div className="container-site">
-          <div className="mx-auto max-w-xl">
-            <h2 className="text-center font-heading text-3xl font-semibold">
-              Get VIP Access
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-heading text-3xl font-semibold">
+              Why Register for VIP Access?
             </h2>
-            <p className="mt-3 text-center text-sm text-white/60">
-              Be the first to receive floor plans and lot selection details
+            <p className="mt-3 text-sm text-white/60">
+              VIP registrants get priority before the public launch in {PROJECT.launch}.
             </p>
-            <div className="mt-8 rounded-2xl bg-white p-6 text-forest-900">
-              <LeadForm page="homepage" />
-            </div>
-            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
-              {VIP_INCENTIVES.slice(0, 4).map((item) => (
-                <li key={item} className="flex items-start gap-2 text-xs text-white/70">
+            <ul className="mt-8 grid gap-3 text-left sm:grid-cols-2">
+              {VIP_INCENTIVES.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80"
+                >
                   <span className="text-gold-400" aria-hidden="true">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
+            <Link href="/register" className="btn-primary mt-10 inline-flex bg-gold-500 text-forest-900 hover:bg-gold-400">
+              Complete Full Registration
+            </Link>
           </div>
         </div>
       </section>
@@ -237,12 +210,12 @@ export default function HomePage() {
                 About the Builder
               </Link>
             </div>
-            <div className="relative aspect-video overflow-hidden rounded-2xl bg-cream-100">
+            <div className="relative aspect-video overflow-hidden rounded-2xl bg-white border border-neutral-200/80">
               <Image
-                src={IMAGES.primontLogo}
-                alt="Primont Homes logo"
+                src={IMAGES.community}
+                alt="Cornerstone Towns Brampton townhome rendering by Primont Homes"
                 fill
-                className="object-contain p-12"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

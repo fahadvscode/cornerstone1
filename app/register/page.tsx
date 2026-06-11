@@ -38,7 +38,7 @@ export default function RegisterPage() {
               </ul>
             </div>
 
-            <div className="card">
+            <div className="rounded-2xl border border-neutral-200/80 bg-white p-6 shadow-sm md:p-8">
               <LeadForm variant="full" page="register" />
             </div>
           </div>

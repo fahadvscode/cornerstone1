@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { FUTURA_FEATURES, PROJECT } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -32,18 +30,6 @@ export default function BuilderPage() {
 
       <section className="section-padding">
         <div className="container-site max-w-4xl">
-          <div className="mb-10 flex justify-center">
-            <div className="relative h-24 w-64">
-              <Image
-                src={IMAGES.primontLogo}
-                alt="Primont Homes"
-                fill
-                className="object-contain"
-                sizes="256px"
-                priority
-              />
-            </div>
-          </div>
           <article className="prose-site">
             <h2>Who Is Primont Homes?</h2>
             <p>

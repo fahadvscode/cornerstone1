@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { DISCLAIMER, NAV_LINKS, PROJECT, SITE_NAME } from "@/lib/constants";
+import { NAV_LINKS, PROJECT, SITE_NAME } from "@/lib/constants";
+import { ProjectLogo } from "@/components/ui/ProjectLogo";
 
 export function Footer() {
   return (
@@ -7,9 +8,11 @@ export function Footer() {
       <div className="container-site section-padding">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h2 className="mb-4 font-heading text-2xl font-bold text-gold-400">
-              {PROJECT.marketingName}
-            </h2>
+            <ProjectLogo
+              onWhiteSurface
+              imageClassName="h-10 w-auto object-contain"
+              className="mb-4"
+            />
             <p className="text-sm leading-relaxed text-cream-200">
               {PROJECT.phase1Units} freehold townhomes by {PROJECT.developer} in
               Northwest Brampton. Launching {PROJECT.launch}.
@@ -66,8 +69,13 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-forest-800 pt-8">
-          <p className="text-center text-xs leading-relaxed text-cream-200">
-            {DISCLAIMER}
+          <p className="mx-auto max-w-4xl text-center text-xs leading-relaxed text-cream-200/90">
+            <span className="font-semibold text-gold-400">Disclaimer:</span>{" "}
+            This website is an independent informational resource about Cornerstone
+            Towns by Primont Homes. We do not represent the builder directly and are
+            not affiliated with Primont Homes. All information is believed to be
+            accurate but is subject to change without notice. For official pricing,
+            floor plans, and availability, contact Primont Homes directly. E.&amp;O.E.
           </p>
           <p className="mt-4 text-center text-xs text-cream-200">
             © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.

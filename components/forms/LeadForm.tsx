@@ -4,7 +4,7 @@ import { useState } from "react";
 import { UNIT_TYPES } from "@/lib/constants";
 
 interface LeadFormProps {
-  variant?: "simple" | "full";
+  variant?: "simple" | "full" | "hero";
   page?: string;
   submitLabel?: string;
   headline?: string;
@@ -78,8 +78,16 @@ export function LeadForm({
     );
   }
 
+  const isHero = variant === "hero";
+  const inputClass = isHero
+    ? "w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-forest-900 placeholder:text-neutral-400 focus:border-forest-700 focus:outline-none focus:ring-2 focus:ring-forest-700/20"
+    : "w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700";
+  const labelClass = isHero
+    ? "mb-1.5 block text-xs font-semibold uppercase tracking-wide text-forest-800"
+    : "mb-1 block text-sm font-medium text-forest-800";
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+    <form onSubmit={handleSubmit} className={isHero ? "space-y-3" : "space-y-4"} noValidate>
       {headline && (
         <h3 className="font-heading text-2xl font-semibold text-forest-900">
           {headline}
@@ -92,9 +100,9 @@ export function LeadForm({
         <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={`grid gap-3 ${isHero ? "sm:grid-cols-2" : "gap-4 sm:grid-cols-2"}`}>
         <div>
-          <label htmlFor="first_name" className="mb-1 block text-sm font-medium text-forest-800">
+          <label htmlFor="first_name" className={labelClass}>
             First Name *
           </label>
           <input
@@ -102,11 +110,12 @@ export function LeadForm({
             id="first_name"
             name="first_name"
             required
-            className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+            placeholder={isHero ? "First name" : undefined}
+            className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="last_name" className="mb-1 block text-sm font-medium text-forest-800">
+          <label htmlFor="last_name" className={labelClass}>
             Last Name *
           </label>
           <input
@@ -114,14 +123,15 @@ export function LeadForm({
             id="last_name"
             name="last_name"
             required
-            className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+            placeholder={isHero ? "Last name" : undefined}
+            className={inputClass}
           />
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={`grid gap-3 ${isHero ? "sm:grid-cols-2" : "gap-4 sm:grid-cols-2"}`}>
         <div>
-          <label htmlFor="email" className="mb-1 block text-sm font-medium text-forest-800">
+          <label htmlFor="email" className={labelClass}>
             Email *
           </label>
           <input
@@ -129,11 +139,12 @@ export function LeadForm({
             id="email"
             name="email"
             required
-            className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+            placeholder={isHero ? "you@email.com" : undefined}
+            className={inputClass}
           />
         </div>
         <div>
-          <label htmlFor="phone" className="mb-1 block text-sm font-medium text-forest-800">
+          <label htmlFor="phone" className={labelClass}>
             Phone *
           </label>
           <input
@@ -142,7 +153,8 @@ export function LeadForm({
             name="phone"
             required
             pattern="[\d\s\-+()]{10,}"
-            className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+            placeholder={isHero ? "(555) 555-5555" : undefined}
+            className={inputClass}
           />
         </div>
       </div>
@@ -199,17 +211,19 @@ export function LeadForm({
         </>
       )}
 
-      <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-medium text-forest-800">
-          {variant === "full" ? "Message / Comments" : "Message (optional)"}
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={variant === "full" ? 4 : 2}
-          className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
-        />
-      </div>
+      {variant !== "hero" && (
+        <div>
+          <label htmlFor="message" className="mb-1 block text-sm font-medium text-forest-800">
+            {variant === "full" ? "Message / Comments" : "Message (optional)"}
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={variant === "full" ? 4 : 2}
+            className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+          />
+        </div>
+      )}
 
       {variant === "full" && (
         <label className="flex items-start gap-2 text-sm text-forest-800">
@@ -238,10 +252,20 @@ export function LeadForm({
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn-primary w-full disabled:opacity-60"
+        className={
+          isHero
+            ? "mt-1 w-full rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-forest-900 transition hover:bg-gold-400 disabled:opacity-60"
+            : "btn-primary w-full disabled:opacity-60"
+        }
       >
         {status === "loading" ? "Submitting..." : submitLabel}
       </button>
+
+      {isHero && (
+        <p className="text-center text-[11px] leading-relaxed text-neutral-500">
+          Free registration · No obligation · VIP access before public launch
+        </p>
+      )}
     </form>
   );
 }

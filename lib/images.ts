@@ -65,7 +65,7 @@ export function getImage(key: string): string {
 export const IMAGES = {
   hero: getImage("hero"),
   sitePlan: getImage("site-plan"),
-  primontLogo: getImage("primont-logo"),
+  logo: getImage("logo"),
   community: getImage("community"),
 } as const;
 

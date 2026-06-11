@@ -1,3 +1,5 @@
+import { ProjectLogo } from "@/components/ui/ProjectLogo";
+
 interface PageHeaderProps {
   title: string;
   subtitle?: string;
@@ -5,8 +7,9 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="border-b border-neutral-200/80 bg-cream-100 py-16 md:py-20">
+    <section className="border-b border-neutral-200/80 bg-white py-16 md:py-20">
       <div className="container-site">
+        <ProjectLogo href="" className="mb-6" imageClassName="h-11 w-auto object-contain sm:h-12" />
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-forest-700">
           Cornerstone Towns · Primont Homes
         </p>
