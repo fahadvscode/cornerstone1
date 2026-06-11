@@ -36,9 +36,10 @@ export function LeadForm({
       last_name: formData.get("last_name") as string,
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
-      working_with_realtor: formData.get("working_with_realtor") === "yes",
+      is_realtor: formData.get("is_realtor") === "yes",
       buyer_type: (formData.get("buyer_type") as string) || undefined,
       unit_interest: unitInterest,
+      interest: (formData.get("interest") as string) || undefined,
       message: (formData.get("message") as string) || undefined,
       page,
       website: formData.get("website") as string,
@@ -163,12 +164,12 @@ export function LeadForm({
         <>
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
-              <label htmlFor="working_with_realtor" className="mb-1 block text-sm font-medium text-forest-800">
-                Are you working with a realtor?
+              <label htmlFor="is_realtor" className="mb-1 block text-sm font-medium text-forest-800">
+                Are you a realtor?
               </label>
               <select
-                id="working_with_realtor"
-                name="working_with_realtor"
+                id="is_realtor"
+                name="is_realtor"
                 className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
               >
                 <option value="no">No</option>

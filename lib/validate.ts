@@ -62,4 +62,14 @@ export function sanitizeUnitInterest(value: unknown): string[] | undefined {
   return items.length > 0 ? items : undefined;
 }
 
+export function sanitizeInterest(
+  value: unknown,
+  unitInterest?: string[]
+): string {
+  const direct = sanitizeString(value, 500);
+  if (direct) return direct;
+  if (unitInterest?.length) return unitInterest.join(", ");
+  return "townhomes";
+}
+
 export { MAX };

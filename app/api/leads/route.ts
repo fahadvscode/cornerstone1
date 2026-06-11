@@ -4,6 +4,7 @@ import {
   isValidEmail,
   sanitizeBuyerType,
   sanitizeEmail,
+  sanitizeInterest,
   sanitizeOptionalString,
   sanitizePhone,
   sanitizeString,
@@ -37,6 +38,16 @@ function checkRateLimit(ip: string): boolean {
   if (entry.count >= RATE_LIMIT) return false;
   entry.count++;
   return true;
+}
+
+function buildLastNote(
+  message: string | undefined,
+  page: string | undefined
+): string | undefined {
+  const parts: string[] = [];
+  if (message) parts.push(message);
+  if (page) parts.push(`Submitted from: ${page}`);
+  return parts.length > 0 ? parts.join("\n\n") : undefined;
 }
 
 export async function POST(request: NextRequest) {
@@ -94,35 +105,47 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const unitInterest = sanitizeUnitInterest(body.unit_interest);
+    const page = sanitizeOptionalString(body.page, 100);
+    const message = sanitizeOptionalString(body.message, 2000);
+
     const lead = {
       first_name,
       last_name,
       email,
       phone: sanitizePhone(body.phone),
-      working_with_realtor: body.working_with_realtor === true,
+      is_realtor:
+        body.is_realtor === true || body.working_with_realtor === true,
+      interest: sanitizeInterest(body.interest, unitInterest),
       buyer_type: sanitizeBuyerType(body.buyer_type),
-      unit_interest: sanitizeUnitInterest(body.unit_interest),
-      message: sanitizeOptionalString(body.message, 2000),
       source: "cornerstonetownsbrampton.ca",
-      page: sanitizeOptionalString(body.page, 100) || "unknown",
-      utm_source: sanitizeOptionalString(body.utm_source, 200),
-      utm_medium: sanitizeOptionalString(body.utm_medium, 200),
-      utm_campaign: sanitizeOptionalString(body.utm_campaign, 200),
+      last_note: buildLastNote(message, page),
     };
 
     const supabase = getSupabaseClient();
-    if (supabase) {
-      const { error } = await supabase.from("cornerstone_leads").insert(lead);
-      if (error) {
-        console.error("Supabase insert error:", error.message);
-        return NextResponse.json(
-          { error: "Unable to process submission. Please try again." },
-          { status: 503 }
-        );
-      }
+    if (!supabase) {
+      console.error("Supabase not configured — missing SUPABASE_URL or key");
+      return NextResponse.json(
+        { error: "Lead capture is temporarily unavailable. Please try again later." },
+        { status: 503 }
+      );
     }
 
-    // Server-only webhook URL — never exposed to the browser
+    const { error } = await supabase.from("cornerstone_leads").insert(lead);
+    if (error) {
+      console.error("Supabase insert error:", error.message, error.code);
+      if (error.code === "23505") {
+        return NextResponse.json(
+          { error: "This email is already registered. We'll be in touch soon." },
+          { status: 409 }
+        );
+      }
+      return NextResponse.json(
+        { error: "Unable to process submission. Please try again." },
+        { status: 503 }
+      );
+    }
+
     const webhookUrl =
       process.env.N8N_WEBHOOK_URL || process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL;
     if (webhookUrl) {
