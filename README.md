@@ -36,7 +36,30 @@ Run the migration in `supabase/migrations/001_cornerstone_leads.sql` in your Sup
 
 ## Deployment
 
-Deploy to Vercel and set environment variables. Point `cornerstonetownsbrampton.ca` to your Vercel deployment.
+**Live:** https://cornerstone-towns-brampton.vercel.app  
+**GitHub:** https://github.com/fahadvscode/cornerstone1  
+**Vercel:** Auto-deploys on push to `main`
+
+### Environment Variables (set in Vercel Dashboard → Settings → Environment Variables)
+
+| Variable | Exposure | Required |
+|---|---|---|
+| `SUPABASE_URL` | Server only | Yes (for forms) |
+| `SUPABASE_ANON_KEY` | Server only | Yes (for forms) |
+| `N8N_WEBHOOK_URL` | Server only | Yes (for automation) |
+| `NEXT_PUBLIC_GOOGLE_MAPS_KEY` | Public | Optional |
+| `NEXT_PUBLIC_SITE_URL` | Public | Yes (`https://cornerstonetownsbrampton.ca`) |
+
+### Custom Domain
+
+In Vercel → Project Settings → Domains, add `cornerstonetownsbrampton.ca` and update DNS.
+
+### Security
+
+- Security headers (HSTS, CSP, X-Frame-Options) enabled in `next.config.ts`
+- API route: rate limiting, honeypot, input sanitization, server-only secrets
+- Supabase RLS: insert-only for anonymous users (run `002_rls_policies.sql`)
+- Never commit `.env.local` — secrets live in Vercel only
 
 ```bash
 npm run build
