@@ -131,8 +131,8 @@ export default function FloorPlansPage() {
           </article>
 
           <p className="mt-8 text-sm italic text-forest-700">
-            Pricing and floor plans are preliminary and subject to change. Contact Fahad
-            Javed for the most current information.
+            Pricing and floor plans are preliminary and subject to change. Register
+            for VIP access for the most current information.
           </p>
         </div>
       </section>

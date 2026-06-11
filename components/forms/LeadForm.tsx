@@ -71,8 +71,8 @@ export function LeadForm({
           Thank You!
         </h3>
         <p className="text-forest-800">
-          You&apos;ve been registered for VIP access to Cornerstone Towns. Fahad
-          Javed will reach out to you shortly.
+          You&apos;ve been registered for VIP access to Cornerstone Towns. We
+          will reach out to you shortly with more information.
         </p>
       </div>
     );

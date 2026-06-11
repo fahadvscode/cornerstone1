@@ -269,19 +269,19 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "What happens after I register for Cornerstone?",
     answer:
-      "After registering, Fahad Javed will contact you to discuss your preferences, share available floor plans and pricing as they are released, and guide you through the VIP selection process. VIP registrants receive priority access before the public launch in Spring 2026.",
+      "After registering, you will receive confirmation and be among the first to get available floor plans and pricing as they are released. VIP registrants receive priority access before the public launch in Spring 2026.",
   },
   {
     category: "Registration & Process",
     question: "Do I need a realtor to buy at Cornerstone?",
     answer:
-      "While you can purchase directly from the builder, working with a licensed real estate agent like Fahad Javed provides advocacy, market expertise, and negotiation support at no additional cost to you — the builder pays the agent's commission.",
+      "While you can purchase directly from the builder, working with a licensed real estate agent provides advocacy, market expertise, and negotiation support at no additional cost to you — the builder pays the agent's commission.",
   },
   {
     category: "Registration & Process",
-    question: "Can I work with Fahad Javed as my agent for Cornerstone?",
+    question: "Can I work with a realtor to buy at Cornerstone?",
     answer:
-      "Yes. Fahad Javed is a licensed Sales Representative with Century 21 Property Zone Realty Inc. specializing in pre-construction homes in Brampton and the GTA. Contact Fahad at 647-898-1739 or fahad@fahadsold.com.",
+      "Yes. You can work with any licensed real estate agent of your choice when purchasing at Cornerstone Towns. An agent can provide advocacy, market expertise, and guidance through the pre-construction purchase process.",
   },
   {
     category: "Registration & Process",
@@ -299,7 +299,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "How do I book an appointment for Cornerstone Towns?",
     answer:
-      "Book a consultation with Fahad Javed through the contact page or registration form. You can also call 647-898-1739 or email fahad@fahadsold.com to schedule a personalized discussion about Cornerstone Towns.",
+      "Book a consultation by completing the registration form on this website. VIP registrants receive priority follow-up with floor plans, pricing, and project updates as they become available.",
   },
   {
     category: "Registration & Process",
@@ -311,7 +311,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "What documents do I need to purchase at Cornerstone?",
     answer:
-      "To purchase at Cornerstone Towns, you will typically need government-issued ID, proof of income, mortgage pre-approval, and a void cheque for deposit payments. Fahad Javed can guide you through the complete documentation process.",
+      "To purchase at Cornerstone Towns, you will typically need government-issued ID, proof of income, mortgage pre-approval, and a void cheque for deposit payments. Your realtor or the builder's sales team can guide you through the complete documentation process.",
   },
   {
     category: "Registration & Process",

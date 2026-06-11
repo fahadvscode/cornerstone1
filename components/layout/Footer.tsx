@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { CONTACT, DISCLAIMER, NAV_LINKS, PROJECT } from "@/lib/constants";
-import { formatPhoneLink } from "@/lib/utils";
+import { DISCLAIMER, NAV_LINKS, PROJECT, SITE_NAME } from "@/lib/constants";
 
 export function Footer() {
   return (
     <footer className="border-t border-cream-200 bg-forest-900 text-cream-100">
       <div className="container-site section-padding">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h2 className="mb-4 font-heading text-2xl font-bold text-gold-400">
               {PROJECT.marketingName}
@@ -40,53 +39,7 @@ export function Footer() {
                   Register for VIP
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-cream-200 transition hover:text-gold-400"
-                >
-                  Contact
-                </Link>
-              </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gold-400">
-              Contact
-            </h3>
-            <address className="space-y-2 text-sm not-italic text-cream-200">
-              <p className="font-semibold text-white">{CONTACT.agent}</p>
-              <p>{CONTACT.title}</p>
-              <p>{CONTACT.brokerage}</p>
-              <p>{CONTACT.brokerageAddress}</p>
-              <p>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="transition hover:text-gold-400"
-                >
-                  {CONTACT.email}
-                </a>
-              </p>
-              <p>
-                <a
-                  href={formatPhoneLink(CONTACT.phone)}
-                  className="transition hover:text-gold-400"
-                >
-                  {CONTACT.phone}
-                </a>
-              </p>
-              <p>
-                <a
-                  href={CONTACT.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-gold-400"
-                >
-                  fahadsold.com
-                </a>
-              </p>
-            </address>
           </div>
 
           <div>
@@ -99,6 +52,16 @@ export function Footer() {
               <li>Units: {PROJECT.phase1Units} townhomes</li>
               <li>Pricing: {PROJECT.pricing}</li>
               <li>Launch: {PROJECT.launch}</li>
+              <li>
+                <a
+                  href={PROJECT.developerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gold-400 hover:underline"
+                >
+                  Official Primont Homes Website
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -108,8 +71,7 @@ export function Footer() {
             {DISCLAIMER}
           </p>
           <p className="mt-4 text-center text-xs text-cream-200">
-            © {new Date().getFullYear()} {CONTACT.agent} | {CONTACT.brokerage}.
-            All rights reserved.
+            © {new Date().getFullYear()} {SITE_NAME}. All rights reserved.
           </p>
           <p className="mt-2 text-center text-xs">
             <Link href="/privacy" className="text-gold-400 hover:underline">

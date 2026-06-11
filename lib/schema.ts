@@ -1,43 +1,27 @@
-import { CONTACT, FUTURA_FEATURES, PROJECT, SITE_URL } from "./constants";
+import { FUTURA_FEATURES, PROJECT, SITE_NAME, SITE_URL } from "./constants";
 
-export function realEstateAgentSchema() {
+export function websiteSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: "Fahad Javed — Sold by Fahad",
-    description:
-      "Fahad Javed is a licensed real estate Sales Representative at Century 21 Property Zone Realty Inc. specializing in pre-construction townhomes and condos in the Greater Toronto Area.",
-    url: CONTACT.website,
-    telephone: CONTACT.phoneFormatted,
-    email: CONTACT.email,
-    image: `${SITE_URL}/fahad-javed.jpg`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "600 Matheson Blvd W, Unit 5",
-      addressLocality: "Mississauga",
-      addressRegion: "ON",
-      postalCode: CONTACT.brokeragePostal,
-      addressCountry: "CA",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    description: `${PROJECT.marketingName} is a master-planned community of ${PROJECT.phase1Units} freehold townhomes in Northwest Brampton by ${PROJECT.developer}.`,
+    url: SITE_URL,
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
     },
-    worksFor: {
-      "@type": "RealEstateAgent",
-      name: CONTACT.brokerage,
-      url: "https://www.century21.ca",
-    },
-    areaServed: {
-      "@type": "City",
-      name: "Brampton",
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: "Greater Toronto Area",
+    about: {
+      "@type": "Residence",
+      name: `${PROJECT.marketingName} Brampton`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Brampton",
+        addressRegion: "ON",
+        addressCountry: "CA",
       },
     },
-    knowsAbout: [
-      "Pre-Construction Homes",
-      "Townhomes",
-      "Real Estate Investment",
-      "Brampton Real Estate",
-    ],
   };
 }
 
@@ -139,7 +123,7 @@ export function articleSchema(post: {
     headline: post.title,
     description: post.description,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: post.author,
     },
     datePublished: post.date,
@@ -147,51 +131,12 @@ export function articleSchema(post: {
     url: `${SITE_URL}/blog/${post.slug}`,
     publisher: {
       "@type": "Organization",
-      name: "Cornerstone Towns Brampton",
+      name: SITE_NAME,
       url: SITE_URL,
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/blog/${post.slug}`,
-    },
-  };
-}
-
-export function localBusinessSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `${CONTACT.agent} — ${CONTACT.brokerage}`,
-    description:
-      "Licensed real estate sales representative specializing in pre-construction homes in Brampton and the Greater Toronto Area.",
-    url: SITE_URL,
-    telephone: CONTACT.phoneFormatted,
-    email: CONTACT.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "600 Matheson Blvd W, Unit 5",
-      addressLocality: "Mississauga",
-      addressRegion: "ON",
-      postalCode: CONTACT.brokeragePostal,
-      addressCountry: "CA",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: PROJECT.coordinates.lat,
-      longitude: PROJECT.coordinates.lng,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ],
-      opens: "09:00",
-      closes: "19:00",
     },
   };
 }

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { CONTACT, NAV_LINKS } from "@/lib/constants";
-import { formatPhoneLink } from "@/lib/utils";
+import { NAV_LINKS } from "@/lib/constants";
 
 export function Navbar() {
   return (
@@ -32,12 +31,6 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href={formatPhoneLink(CONTACT.phone)}
-              className="hidden text-sm font-semibold text-forest-800 md:block"
-            >
-              {CONTACT.phone}
-            </a>
             <Link href="/register" className="btn-primary text-xs sm:text-sm">
               VIP Access
             </Link>

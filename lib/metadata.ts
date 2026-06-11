@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT, KEYWORDS, PROJECT, SITE_URL } from "./constants";
+import { KEYWORDS, PROJECT, SITE_NAME, SITE_URL } from "./constants";
 import { getCanonicalUrl } from "./utils";
 
 interface PageMetadataOptions {
@@ -24,7 +24,7 @@ export function createPageMetadata({
     title: fullTitle,
     description,
     keywords: KEYWORDS,
-    authors: [{ name: `${CONTACT.agent} — ${CONTACT.brokerage}` }],
+    authors: [{ name: SITE_NAME }],
     robots: {
       index: true,
       follow: true,
@@ -38,7 +38,7 @@ export function createPageMetadata({
       description,
       type: "website",
       url: canonical,
-      siteName: "Cornerstone Towns Brampton — Fahad Javed Real Estate",
+      siteName: SITE_NAME,
       locale: "en_CA",
       images: [
         {

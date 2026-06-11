@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
+import { DisclaimerBar } from "@/components/layout/DisclaimerBar";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createPageMetadata } from "@/lib/metadata";
-import { realEstateAgentSchema } from "@/lib/schema";
+import { websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -37,7 +38,8 @@ export default function RootLayout({
   return (
     <html lang="en-CA">
       <body className={`${cormorant.variable} ${montserrat.variable}`}>
-        <JsonLd data={realEstateAgentSchema()} />
+        <JsonLd data={websiteSchema()} />
+        <DisclaimerBar />
         <Navbar />
         <main>{children}</main>
         <Footer />

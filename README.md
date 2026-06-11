@@ -78,5 +78,4 @@ npm run build
 - `/faq` — 57 FAQs with schema markup
 - `/blog` — Blog index (5 seed posts)
 - `/register` — VIP Registration
-- `/contact` — Contact Page
 - `/privacy` — Privacy Policy

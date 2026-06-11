@@ -1,13 +1,13 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { CONTACT } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = createPageMetadata({
   title: "Privacy Policy | Cornerstone Towns Brampton",
   description:
-    "Privacy policy for cornerstonetownsbrampton.ca. Learn how Fahad Javed and Century 21 Property Zone Realty Inc. collect, use, and protect your personal information.",
+    "Privacy policy for cornerstonetownsbrampton.ca. Learn how we collect, use, and protect your personal information when you register for VIP access.",
   path: "/privacy",
 });
 
@@ -23,13 +23,13 @@ export default function PrivacyPage() {
 
           <h2>Introduction</h2>
           <p>
-            This privacy policy explains how {CONTACT.agent} ({CONTACT.brokerage})
-            collects, uses, and protects your personal information when you visit
+            This privacy policy explains how {SITE_NAME} collects, uses, and
+            protects your personal information when you visit
             cornerstonetownsbrampton.ca or submit a registration form.
           </p>
 
           <h2>Information We Collect</h2>
-          <p>When you register or contact us, we may collect:</p>
+          <p>When you register, we may collect:</p>
           <ul>
             <li>Name, email address, and phone number</li>
             <li>Buyer preferences (unit type, investor/end-user status)</li>
@@ -42,35 +42,34 @@ export default function PrivacyPage() {
           <p>We use your information to:</p>
           <ul>
             <li>Register you for VIP access to Cornerstone Towns</li>
-            <li>Contact you about floor plans, pricing, and availability</li>
-            <li>Provide real estate advisory services</li>
+            <li>Send you information about floor plans, pricing, and availability</li>
             <li>Improve our website and services</li>
           </ul>
 
           <h2>Data Sharing</h2>
           <p>
-            Your information may be shared with our CRM system (Follow Up Boss),
-            automation tools (n8n), and SMS services for follow-up communication.
-            We do not sell your personal information to third parties.
+            Your information may be shared with third-party services used to
+            process registrations and deliver follow-up communications. We do not
+            sell your personal information to third parties.
           </p>
 
           <h2>Data Storage</h2>
           <p>
-            Registration data is stored securely in Supabase. We retain your
-            information for as long as necessary to provide our services or as
-            required by law.
+            Registration data is stored securely. We retain your information for
+            as long as necessary to provide our services or as required by law.
           </p>
 
           <h2>Your Rights</h2>
           <p>
             You may request access to, correction of, or deletion of your personal
-            information by contacting {CONTACT.email}.
+            information by submitting a request through the registration form
+            on this website.
           </p>
 
-          <h2>Contact</h2>
+          <h2>Disclaimer</h2>
           <p>
-            For privacy-related inquiries, contact {CONTACT.agent} at{" "}
-            {CONTACT.email} or {CONTACT.phone}.
+            This website is an independent informational resource. We do not
+            represent Primont Homes or the builder directly.
           </p>
         </div>
       </section>

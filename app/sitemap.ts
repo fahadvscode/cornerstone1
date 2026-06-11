@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/faq`, priority: 0.8 },
     { url: `${SITE_URL}/blog`, priority: 0.8 },
     { url: `${SITE_URL}/register`, priority: 0.8 },
-    { url: `${SITE_URL}/contact`, priority: 0.8 },
     { url: `${SITE_URL}/privacy`, priority: 0.3 },
   ];
 

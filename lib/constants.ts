@@ -1,18 +1,5 @@
 export const SITE_URL = "https://cornerstonetownsbrampton.ca";
-
-export const CONTACT = {
-  agent: "Fahad Javed",
-  title: "Sales Representative",
-  brokerage: "Century 21 Property Zone Realty Inc., Brokerage",
-  brokerageAddress: "600 Matheson Blvd W, Unit 5, Mississauga, ON",
-  brokeragePostal: "L4W 4J1",
-  email: "fahad@fahadsold.com",
-  phone: "647-898-1739",
-  phoneFormatted: "+1-647-898-1739",
-  website: "https://fahadsold.com",
-  bookingUrl: "https://qikfill.com/fahad-javed",
-  hours: "Monday – Saturday, 9:00 AM – 7:00 PM EST",
-} as const;
+export const SITE_NAME = "Cornerstone Towns Brampton";
 
 export const PROJECT = {
   name: "Cornerstone",
@@ -218,7 +205,7 @@ export const KEYWORDS =
   "Cornerstone Towns, Cornerstone Brampton, Primont Homes, pre-construction townhomes Brampton, new townhomes Brampton, Northwest Brampton, freehold townhomes Brampton";
 
 export const DISCLAIMER =
-  "We do not represent the builder directly. Information is believed to be accurate but subject to change without notice. E.&O.E.";
+  "Disclaimer: This website is an independent informational resource about Cornerstone Towns by Primont Homes. We do not represent the builder directly and are not affiliated with Primont Homes. All information is believed to be accurate but is subject to change without notice. For official pricing, floor plans, and availability, contact Primont Homes directly. E.&O.E.";
 
 export const INVESTMENT_DISCLAIMER =
   "This analysis is for informational purposes only and does not constitute financial advice.";

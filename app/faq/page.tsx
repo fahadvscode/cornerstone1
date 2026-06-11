@@ -43,12 +43,9 @@ export default function FAQPage() {
 
           <div className="mt-8 text-center">
             <p className="mb-4 text-forest-800">
-              Still have questions? Contact Fahad Javed or register for VIP access.
+              Still have questions? Register for VIP access to receive more information.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="btn-secondary">
-                Contact Us
-              </Link>
               <Link href="/register" className="btn-primary">
                 Register for VIP Access
               </Link>

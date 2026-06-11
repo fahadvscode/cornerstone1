@@ -36,7 +36,7 @@ export function getAllPosts(): BlogPost[] {
         title: data.title as string,
         description: data.description as string,
         date: data.date as string,
-        author: (data.author as string) || "Fahad Javed",
+        author: (data.author as string) || "Cornerstone Towns Brampton",
         content,
         readingTime: estimateReadingTime(content),
       };
@@ -56,7 +56,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     title: data.title as string,
     description: data.description as string,
     date: data.date as string,
-    author: (data.author as string) || "Fahad Javed",
+    author: (data.author as string) || "Cornerstone Towns Brampton",
     content,
     readingTime: estimateReadingTime(content),
   };
