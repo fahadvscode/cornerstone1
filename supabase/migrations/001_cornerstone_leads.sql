@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS cornerstone_leads (
   email TEXT NOT NULL UNIQUE,
   phone TEXT,
   is_realtor BOOLEAN DEFAULT false,
+  is_broker BOOLEAN DEFAULT false,
   interest TEXT DEFAULT 'townhomes',
   buyer_type TEXT,
   source TEXT DEFAULT 'website',

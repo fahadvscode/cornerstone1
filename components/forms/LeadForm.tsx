@@ -37,6 +37,7 @@ export function LeadForm({
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
       is_realtor: formData.get("is_realtor") === "yes",
+      is_broker: formData.get("is_broker") === "yes",
       buyer_type: (formData.get("buyer_type") as string) || undefined,
       unit_interest: unitInterest,
       interest: (formData.get("interest") as string) || undefined,
@@ -160,22 +161,40 @@ export function LeadForm({
         </div>
       </div>
 
+      <div className={`grid gap-3 ${isHero ? "sm:grid-cols-2" : "gap-4 sm:grid-cols-2"}`}>
+        <div>
+          <label htmlFor="is_broker" className={labelClass}>
+            Are you a broker?
+          </label>
+          <select
+            id="is_broker"
+            name="is_broker"
+            className={isHero ? inputClass : "w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"}
+          >
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+        </div>
+        {variant === "full" && (
+          <div>
+            <label htmlFor="is_realtor" className="mb-1 block text-sm font-medium text-forest-800">
+              Are you a realtor?
+            </label>
+            <select
+              id="is_realtor"
+              name="is_realtor"
+              className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
+            >
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+        )}
+      </div>
+
       {variant === "full" && (
         <>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label htmlFor="is_realtor" className="mb-1 block text-sm font-medium text-forest-800">
-                Are you a realtor?
-              </label>
-              <select
-                id="is_realtor"
-                name="is_realtor"
-                className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
-              >
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-              </select>
-            </div>
             <div>
               <label htmlFor="buyer_type" className="mb-1 block text-sm font-medium text-forest-800">
                 Buying as investor or end-user?

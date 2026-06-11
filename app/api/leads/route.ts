@@ -116,6 +116,7 @@ export async function POST(request: NextRequest) {
       phone: sanitizePhone(body.phone),
       is_realtor:
         body.is_realtor === true || body.working_with_realtor === true,
+      is_broker: body.is_broker === true,
       interest: sanitizeInterest(body.interest, unitInterest),
       buyer_type: sanitizeBuyerType(body.buyer_type),
       source: "cornerstonetownsbrampton.ca",

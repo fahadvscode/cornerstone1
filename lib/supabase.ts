@@ -26,6 +26,7 @@ export interface CornerstoneLead {
   email: string;
   phone?: string;
   is_realtor?: boolean;
+  is_broker?: boolean;
   interest?: string;
   buyer_type?: string;
   source?: string;
