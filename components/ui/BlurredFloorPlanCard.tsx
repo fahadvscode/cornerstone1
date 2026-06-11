@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getImage } from "@/lib/images";
 
 interface BlurredFloorPlanCardProps {
   name: string;
@@ -10,16 +11,13 @@ interface BlurredFloorPlanCardProps {
   imageSrc?: string;
 }
 
-const DEFAULT_IMAGE =
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80";
-
 export function BlurredFloorPlanCard({
   name,
   bedrooms,
   sizeRange,
   features,
   idealFor,
-  imageSrc = DEFAULT_IMAGE,
+  imageSrc = getImage("interior"),
 }: BlurredFloorPlanCardProps) {
   return (
     <Link

@@ -16,7 +16,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://images.unsplash.com https://maps.googleapis.com https://maps.gstatic.com",
+      "img-src 'self' data: blob: https://maps.googleapis.com https://maps.gstatic.com",
       "font-src 'self' data:",
       "connect-src 'self' https://*.supabase.co",
       "frame-src 'self' https://www.google.com https://maps.google.com",
@@ -41,10 +41,7 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "maps.googleapis.com" },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "maps.googleapis.com" }],
   },
   async headers() {
     return [

@@ -10,6 +10,7 @@ import {
   PROJECT,
   VIP_INCENTIVES,
 } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import { getTopFaqs } from "@/lib/faq-data";
 import { breadcrumbSchema, faqPageSchema, residenceSchema } from "@/lib/schema";
 
@@ -61,7 +62,7 @@ export default function HomePage() {
 
       <section className="relative flex min-h-[85vh] items-center overflow-hidden bg-forest-900 text-white">
         <Image
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80"
+          src={IMAGES.hero}
           alt="Cornerstone Towns Brampton new freehold townhomes by Primont Homes"
           fill
           priority
@@ -236,8 +237,14 @@ export default function HomePage() {
                 About the Builder
               </Link>
             </div>
-            <div className="flex aspect-video items-center justify-center rounded-2xl bg-cream-100">
-              <span className="font-heading text-xl text-neutral-400">Primont Homes</span>
+            <div className="relative aspect-video overflow-hidden rounded-2xl bg-cream-100">
+              <Image
+                src={IMAGES.primontLogo}
+                alt="Primont Homes logo"
+                fill
+                className="object-contain p-12"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
           </div>
         </div>
