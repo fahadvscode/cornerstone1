@@ -42,7 +42,7 @@ export default function PrivacyPage() {
           <p>We use your information to:</p>
           <ul>
             <li>Register you for VIP access to Cornerstone Towns</li>
-            <li>Send you information about floor plans, pricing, and availability</li>
+            <li>Send you information about floor plans and availability</li>
             <li>Improve our website and services</li>
           </ul>
 

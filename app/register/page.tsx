@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = createPageMetadata({
   title: "Register for VIP Access | Cornerstone Towns Brampton",
   description:
-    "Register for exclusive VIP access to Cornerstone Towns Brampton by Primont Homes. First access to floor plans, Platinum pricing, and lot selection. Launching Spring 2026.",
+    "Register for exclusive VIP access to Cornerstone Towns Brampton by Primont Homes. First access to floor plans and lot selection. Launching Spring 2026.",
   path: "/register",
 });
 
@@ -18,7 +18,7 @@ export default function RegisterPage() {
       <JsonLd data={breadcrumbSchema("Register", "/register")} />
       <PageHeader
         title="Get Exclusive VIP Access to Cornerstone Towns Brampton"
-        subtitle="Be the first to receive floor plans, pricing, and first lot selection"
+        subtitle="Be the first to receive floor plans and first lot selection"
       />
 
       <section className="section-padding">

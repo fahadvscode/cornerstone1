@@ -24,7 +24,7 @@ export default function FAQPage() {
       />
       <PageHeader
         title="Cornerstone Towns Brampton — Frequently Asked Questions"
-        subtitle={`${FAQ_DATA.length} questions answered about pricing, floor plans, location, registration, and more`}
+        subtitle={`${FAQ_DATA.length} questions answered about floor plans, location, registration, and more`}
       />
 
       <section className="section-padding">

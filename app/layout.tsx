@@ -24,9 +24,9 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = createPageMetadata({
   title:
-    "Cornerstone Towns Brampton | Freehold Townhomes from $600s by Primont Homes",
+    "Cornerstone Towns Brampton | Freehold Townhomes by Primont Homes",
   description:
-    "Register for VIP pricing & floor plans at Cornerstone Towns in Brampton by Primont Homes. 129 freehold townhomes from the $600s in Northwest Brampton. Launching Spring 2026.",
+    "Register for VIP access to Cornerstone Towns in Brampton by Primont Homes. 129 freehold townhomes in Northwest Brampton with Futura smart home technology. Launching Spring 2026.",
   path: "/",
 });
 

@@ -12,7 +12,7 @@ export function Footer() {
             </h2>
             <p className="text-sm leading-relaxed text-cream-200">
               {PROJECT.phase1Units} freehold townhomes by {PROJECT.developer} in
-              Northwest Brampton. {PROJECT.pricing}. Launching {PROJECT.launch}.
+              Northwest Brampton. Launching {PROJECT.launch}.
             </p>
           </div>
 
@@ -50,7 +50,6 @@ export function Footer() {
               <li>Developer: {PROJECT.developer}</li>
               <li>Location: Northwest Brampton</li>
               <li>Units: {PROJECT.phase1Units} townhomes</li>
-              <li>Pricing: {PROJECT.pricing}</li>
               <li>Launch: {PROJECT.launch}</li>
               <li>
                 <a

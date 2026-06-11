@@ -3,49 +3,47 @@ import { NAV_LINKS } from "@/lib/constants";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-cream-200 bg-cream-50/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/90 backdrop-blur-md">
       <div className="container-site">
-        <div className="flex h-16 items-center justify-between gap-4 lg:h-20">
+        <div className="flex h-16 items-center justify-between gap-4">
           <Link href="/" className="shrink-0">
-            <span className="block font-heading text-xl font-bold text-forest-900 lg:text-2xl">
+            <span className="block font-heading text-xl font-semibold text-forest-900">
               Cornerstone Towns
             </span>
-            <span className="block text-xs font-medium uppercase tracking-widest text-gold-500">
-              Brampton by Primont Homes
+            <span className="block text-[10px] font-medium uppercase tracking-[0.18em] text-neutral-500">
+              Brampton
             </span>
           </Link>
 
           <nav
-            className="hidden items-center gap-5 xl:flex"
+            className="hidden items-center gap-6 lg:flex"
             aria-label="Main navigation"
           >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-forest-800 transition hover:text-forest-700"
+                className="text-sm text-neutral-600 transition hover:text-forest-900"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
-            <Link href="/register" className="btn-primary text-xs sm:text-sm">
-              VIP Access
-            </Link>
-          </div>
+          <Link href="/register" className="btn-primary text-xs sm:text-sm">
+            VIP Access
+          </Link>
         </div>
 
         <nav
-          className="flex gap-4 overflow-x-auto border-t border-cream-200 py-2 xl:hidden"
+          className="flex gap-5 overflow-x-auto border-t border-neutral-100 py-2.5 lg:hidden"
           aria-label="Mobile navigation"
         >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="shrink-0 text-xs font-medium text-forest-800"
+              className="shrink-0 text-xs font-medium text-neutral-600"
             >
               {link.label}
             </Link>

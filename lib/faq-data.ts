@@ -19,7 +19,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "About the Project",
     question: "What is Cornerstone Towns Brampton?",
     answer:
-      "Cornerstone Towns is a master-planned community of 129 freehold townhomes in Northwest Brampton by Primont Homes, located at Mississauga Road and Sandalwood Parkway West. The development features Back-to-Back and Traditional townhome designs starting from the $600s, with Primont's Futura smart home technology included as standard. The community is launching in Spring 2026.",
+      "Cornerstone Towns is a master-planned community of 129 freehold townhomes in Northwest Brampton by Primont Homes, located at Mississauga Road and Sandalwood Parkway West. The development features Back-to-Back and Traditional townhome designs  with Primont's Futura smart home technology included as standard. The community is launching in Spring 2026.",
   },
   {
     category: "About the Project",
@@ -55,7 +55,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "About the Project",
     question: "When does Cornerstone Towns launch?",
     answer:
-      "Cornerstone Towns by Primont Homes is launching in Spring 2026. Early VIP registrants receive first access to floor plans, pricing, and lot selection before the public launch.",
+      "Cornerstone Towns by Primont Homes is launching in Spring 2026. Early VIP registrants receive first access to floor plans, and lot selection before the public launch.",
   },
   {
     category: "About the Project",
@@ -92,7 +92,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Pricing & Financials",
     question: "What is the starting price for Cornerstone Towns?",
     answer:
-      "Cornerstone Towns freehold townhomes start from the $600s. The estimated price range is $600,000 to $900,000+ depending on unit type, size, and lot selection. Back-to-Back designs offer the most affordable entry point.",
+      "Cornerstone Towns freehold townhomes Pricing has not yet been announced. Pricing has not yet been announced. Register for VIP access to receive details when they are released.",
   },
   {
     category: "Pricing & Financials",
@@ -104,7 +104,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Pricing & Financials",
     question: "Are there VIP incentives for early buyers at Cornerstone?",
     answer:
-      "Yes. Early VIP registrants at Cornerstone Towns receive Platinum VIP pricing, first access to floor plans, first selection of units and lots, capped development charges, a free assignment clause (subject to builder approval), extended deposit structure, free lawyer review, and free mortgage arrangements.",
+      "Yes. Early VIP registrants at Cornerstone Towns receive First access to floor plans, first access to floor plans, first selection of units and lots, capped development charges, a free assignment clause (subject to builder approval), extended deposit structure, free lawyer review, and free mortgage arrangements.",
   },
   {
     category: "Pricing & Financials",
@@ -128,7 +128,7 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Pricing & Financials",
     question: "How does pre-construction pricing compare to resale in Brampton?",
     answer:
-      "Pre-construction townhomes in Brampton typically offer a price advantage of 10–20% compared to comparable resale units, plus the ability to customize finishes and benefit from appreciation during the construction period. Cornerstone Towns starting from the $600s positions it competitively against both pre-construction and resale alternatives.",
+      "Pre-construction townhomes in Brampton typically offer a price advantage of 10–20% compared to comparable resale units, plus the ability to customize finishes and benefit from appreciation during the construction period. Cornerstone Towns with multiple layout options positions it competitively against both pre-construction and resale alternatives.",
   },
   {
     category: "Pricing & Financials",
@@ -150,9 +150,9 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     category: "Pricing & Financials",
-    question: "Can I get Platinum VIP pricing at Cornerstone?",
+    question: "Can I get First access to floor plans at Cornerstone?",
     answer:
-      "Platinum VIP pricing is available to early registrants before the public launch. Register through this website to secure VIP access, which includes preferential pricing, first lot selection, and additional incentives not available at public launch.",
+      "First access to floor plans is available to early registrants before the public launch. Register through this website to secure VIP access, which includes first access to floor plans, first lot selection, and additional incentives not available at public launch.",
   },
   // Location & Lifestyle (11)
   {
@@ -263,13 +263,13 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "How do I register for Cornerstone Towns?",
     answer:
-      "Register for VIP access to Cornerstone Towns by completing the registration form on this website. Provide your name, email, phone number, and preferences. You will be among the first to receive floor plans, pricing, and lot selection opportunities.",
+      "Register for VIP access to Cornerstone Towns by completing the registration form on this website. Provide your name, email, phone number, and preferences. You will be among the first to receive floor plans, and lot selection opportunities.",
   },
   {
     category: "Registration & Process",
     question: "What happens after I register for Cornerstone?",
     answer:
-      "After registering, you will receive confirmation and be among the first to get available floor plans and pricing as they are released. VIP registrants receive priority access before the public launch in Spring 2026.",
+      "After registering, you will receive confirmation and be among the first to get available floor plans as they are released. VIP registrants receive priority access before the public launch in Spring 2026.",
   },
   {
     category: "Registration & Process",
@@ -287,19 +287,19 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "What is the VIP/Platinum access process at Cornerstone?",
     answer:
-      "VIP/Platinum access gives early registrants first access to floor plans, preferential pricing, first lot selection, capped development charges, free assignment, extended deposits, and complimentary legal and mortgage services. Register early to secure these benefits.",
+      "VIP/Platinum access gives early registrants first access to floor plans, first access to floor plans, first lot selection, capped development charges, free assignment, extended deposits, and complimentary legal and mortgage services. Register early to secure these benefits.",
   },
   {
     category: "Registration & Process",
     question: "When will floor plans be available for Cornerstone?",
     answer:
-      "Detailed floor plans for Cornerstone Towns will be released to VIP registrants before the public launch in Spring 2026. Register now to be among the first to receive floor plans and pricing information.",
+      "Detailed floor plans for Cornerstone Towns will be released to VIP registrants before the public launch in Spring 2026. Register now to be among the first to receive floor plans information.",
   },
   {
     category: "Registration & Process",
     question: "How do I book an appointment for Cornerstone Towns?",
     answer:
-      "Book a consultation by completing the registration form on this website. VIP registrants receive priority follow-up with floor plans, pricing, and project updates as they become available.",
+      "Book a consultation by completing the registration form on this website. VIP registrants receive priority follow-up with floor plans, and project updates as they become available.",
   },
   {
     category: "Registration & Process",
@@ -323,14 +323,14 @@ export const FAQ_DATA: FAQItem[] = [
     category: "Registration & Process",
     question: "Is there a deadline to register for VIP access?",
     answer:
-      "There is no fixed deadline, but VIP benefits including Platinum pricing and first lot selection are available on a first-come, first-served basis. Registering early before the Spring 2026 public launch maximizes your advantages.",
+      "There is no fixed deadline, but VIP benefits including first lot selection and first lot selection are available on a first-come, first-served basis. Registering early before the Spring 2026 public launch maximizes your advantages.",
   },
   // Investment (6)
   {
     category: "Investment",
     question: "Is Cornerstone Towns a good investment?",
     answer:
-      "Cornerstone Towns offers strong investment fundamentals: entry pricing from the $600s, a master-planned community in Northwest Brampton's growth corridor, Futura smart home technology as standard, Primont's 50-year track record, and Brampton's projected population growth to 1 million by 2051. Pre-construction buying also offers deposit leverage and appreciation during the build period.",
+      "Cornerstone Towns offers strong investment fundamentals: a master-planned community in Northwest Brampton's growth corridor, Futura smart home technology as standard, Primont's 50-year track record, and Brampton's projected population growth to 1 million by 2051. Pre-construction buying also offers deposit leverage and appreciation during the build period.",
   },
   {
     category: "Investment",

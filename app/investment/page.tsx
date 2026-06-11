@@ -27,10 +27,10 @@ export default function InvestmentPage() {
             <h2>Is Cornerstone Towns a Good Investment?</h2>
             <p>
               Cornerstone Towns by Primont Homes offers compelling investment fundamentals:
-              entry pricing from the $600s in a master-planned community within Northwest
-              Brampton&apos;s designated growth corridor, Futura smart home technology as
-              standard, and the advantages of pre-construction buying including deposit leverage
-              and appreciation during the build period.
+              a master-planned community within Northwest Brampton&apos;s designated growth
+              corridor, Futura smart home technology as standard, and the advantages of
+              pre-construction buying including deposit leverage and appreciation during
+              the build period.
             </p>
 
             <h2>Brampton Population Growth</h2>
@@ -88,10 +88,10 @@ export default function InvestmentPage() {
 
             <h2>Comparison to Resale</h2>
             <p>
-              Pre-construction townhomes in Brampton typically offer a 10–20% price advantage
-              over comparable resale units. With Cornerstone starting from the $600s, buyers
-              enter at a competitive price point with the added benefit of a brand-new home
-              with modern smart technology and energy-efficient construction.
+              Pre-construction townhomes in Brampton typically offer advantages over comparable
+              resale units during the construction period. Cornerstone buyers benefit from a
+              brand-new home with modern smart technology and energy-efficient construction
+              in a high-growth corridor.
             </p>
 
             <h2>Who Should Invest?</h2>

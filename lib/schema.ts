@@ -30,7 +30,7 @@ export function residenceSchema() {
     "@context": "https://schema.org",
     "@type": "Residence",
     name: `${PROJECT.marketingName} Brampton`,
-    description: `${PROJECT.marketingName} is a master-planned community of ${PROJECT.phase1Units} freehold townhomes in Northwest Brampton by ${PROJECT.developer}. Back-to-Back and Traditional designs ${PROJECT.pricing.toLowerCase()} with Futura smart home technology. Launching ${PROJECT.launch}.`,
+    description: `${PROJECT.marketingName} is a master-planned community of ${PROJECT.phase1Units} freehold townhomes in Northwest Brampton by ${PROJECT.developer}. Back-to-Back and Traditional designs with Futura smart home technology. Launching ${PROJECT.launch}.`,
     url: SITE_URL,
     address: {
       "@type": "PostalAddress",

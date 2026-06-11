@@ -8,9 +8,9 @@
   --color-gold-500: #c9a84c;
   --color-gold-400: #d4a94c;
   --color-gold-300: #e0c070;
-  --color-cream-50: #fffdf5;
-  --color-cream-100: #fff9e6;
-  --color-cream-200: #f5f0e1;
+  --color-cream-50: #ffffff;
+  --color-cream-100: #fafafa;
+  --color-cream-200: #f0f0f0;
   --font-heading: var(--font-cormorant), "Cormorant Garamond", serif;
   --font-body: var(--font-montserrat), "Montserrat", sans-serif;
 }
@@ -21,7 +21,7 @@
   }
 
   body {
-    @apply bg-cream-50 text-forest-900 font-body antialiased;
+    @apply bg-white text-forest-900 font-body antialiased;
   }
 
   h1,
@@ -30,33 +30,33 @@
   h4,
   h5,
   h6 {
-    @apply font-heading;
+    @apply font-heading tracking-tight;
   }
 }
 
 @layer components {
   .container-site {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-5 sm:px-8;
   }
 
   .section-padding {
-    @apply py-16 md:py-20;
+    @apply py-20 md:py-24;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-gold-500 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-forest-900 transition hover:bg-gold-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500;
+    @apply inline-flex items-center justify-center rounded-full bg-forest-900 px-7 py-3 text-sm font-medium text-white transition hover:bg-forest-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-900;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-md border-2 border-gold-500 bg-transparent px-6 py-3 text-sm font-semibold uppercase tracking-wide text-gold-500 transition hover:bg-gold-500 hover:text-forest-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500;
+    @apply inline-flex items-center justify-center rounded-full border border-forest-900/20 bg-white px-7 py-3 text-sm font-medium text-forest-900 transition hover:border-forest-900 hover:bg-forest-900/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-900;
   }
 
   .card {
-    @apply rounded-lg border border-cream-200 bg-white p-6 shadow-sm;
+    @apply rounded-2xl border border-neutral-200/80 bg-white p-6;
   }
 
   .prose-site {
-    @apply max-w-none text-forest-800 leading-relaxed;
+    @apply max-w-none text-neutral-600 leading-relaxed;
   }
 
   .prose-site h2 {

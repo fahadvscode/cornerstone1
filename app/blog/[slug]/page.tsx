@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Ready to Register for VIP Access?
             </h2>
             <p className="mt-2 text-forest-800">
-              Be the first to receive floor plans and pricing for Cornerstone Towns.
+              Be the first to receive floor plans for Cornerstone Towns.
             </p>
             <Link href="/register" className="btn-primary mt-4 inline-flex">
               Register Now

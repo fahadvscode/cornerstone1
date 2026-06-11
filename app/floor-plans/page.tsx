@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { FloorPlanGrid } from "@/components/sections/FloorPlanGrid";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { PROJECT, UNIT_TYPES, VIP_INCENTIVES } from "@/lib/constants";
@@ -7,9 +8,9 @@ import { createPageMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = createPageMetadata({
-  title: "Cornerstone Towns Floor Plans & Pricing | Brampton Townhomes from $600s",
+  title: "Cornerstone Towns Floor Plans | Brampton Townhomes by Primont Homes",
   description:
-    "View floor plans and pricing for Cornerstone Towns in Brampton. 1-3 bedroom freehold townhomes by Primont Homes starting from the $600s. Back-to-Back & Traditional designs.",
+    "Explore floor plans for Cornerstone Towns in Brampton. 1–3 bedroom freehold townhomes by Primont Homes. Register for VIP access to unlock full plans.",
   path: "/floor-plans",
 });
 
@@ -18,133 +19,106 @@ export default function FloorPlansPage() {
     <>
       <JsonLd data={breadcrumbSchema("Floor Plans", "/floor-plans")} />
       <PageHeader
-        title="Cornerstone Towns Brampton — Floor Plans & Pricing"
-        subtitle={`${PROJECT.phase1Units} freehold townhomes from ${PROJECT.pricing} by ${PROJECT.developer}`}
+        title="Floor Plans"
+        subtitle={`${PROJECT.phase1Units} freehold townhomes by ${PROJECT.developer} — register for VIP access to unlock full floor plans`}
       />
 
       <section className="section-padding">
         <div className="container-site">
-          <div className="prose-site max-w-4xl">
-            <p>
-              Cornerstone Towns offers a diverse range of freehold townhome layouts designed
-              for different lifestyles and budgets. From compact 1 Bedroom + Den units ideal
-              for first-time buyers to spacious 3 Bedroom family homes, every layout includes
-              Primont&apos;s Futura smart home technology as standard.
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <p className="text-neutral-600 leading-relaxed">
+              Cornerstone Towns offers six layout options from 1 Bedroom + Den to
+              3 Bedroom, including Back-to-Back and Traditional designs. Every home
+              includes Primont&apos;s Futura smart home technology as standard.
+            </p>
+            <p className="mt-3 text-sm text-neutral-500">
+              Full floor plans are available exclusively to VIP registrants before
+              the public launch.
             </p>
           </div>
 
-          <h2 className="mb-6 mt-12 font-heading text-2xl font-bold text-forest-900">
-            Unit Type Comparison
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[700px] border-collapse text-sm">
+          <FloorPlanGrid />
+
+          <div className="mt-10 overflow-x-auto">
+            <table className="w-full min-w-[560px] border-collapse text-sm">
               <thead>
-                <tr className="bg-forest-900 text-left text-cream-50">
-                  <th className="p-3 font-semibold">Type</th>
-                  <th className="p-3 font-semibold">Bedrooms</th>
-                  <th className="p-3 font-semibold">Est. Size Range</th>
-                  <th className="p-3 font-semibold">Est. Price Range</th>
-                  <th className="p-3 font-semibold">Key Features</th>
+                <tr className="border-b border-neutral-200 text-left text-neutral-500">
+                  <th className="pb-3 font-medium">Type</th>
+                  <th className="pb-3 font-medium">Bedrooms</th>
+                  <th className="pb-3 font-medium">Est. Size</th>
+                  <th className="pb-3 font-medium">Highlights</th>
                 </tr>
               </thead>
               <tbody>
-                {UNIT_TYPES.map((unit, i) => (
-                  <tr key={unit.slug} className={i % 2 === 0 ? "bg-white" : "bg-cream-100"}>
-                    <td className="p-3 font-medium text-forest-900">{unit.name}</td>
-                    <td className="p-3 text-forest-800">{unit.bedrooms}</td>
-                    <td className="p-3 text-forest-800">{unit.sizeRange}</td>
-                    <td className="p-3 text-forest-800">{unit.priceRange}</td>
-                    <td className="p-3 text-forest-800">{unit.features}</td>
+                {UNIT_TYPES.map((unit) => (
+                  <tr key={unit.slug} className="border-b border-neutral-100">
+                    <td className="py-3 font-medium text-forest-900">{unit.name}</td>
+                    <td className="py-3 text-neutral-600">{unit.bedrooms}</td>
+                    <td className="py-3 text-neutral-600">{unit.sizeRange}</td>
+                    <td className="py-3 text-neutral-600">{unit.features}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          {UNIT_TYPES.map((unit) => (
-            <article key={unit.slug} className="mt-12">
-              <h2 className="font-heading text-2xl font-bold text-forest-900">
-                {unit.name}
+          <article className="mt-16 grid gap-6 md:grid-cols-2">
+            <div className="card">
+              <h2 className="font-heading text-xl font-semibold text-forest-900">
+                Back-to-Back Towns
               </h2>
-              <p className="mt-2 text-forest-800 leading-relaxed">
-                The {unit.name} layout at Cornerstone Towns ({unit.sizeRange}) is{" "}
-                {unit.idealFor.toLowerCase()}. {unit.features}. Estimated pricing:{" "}
-                {unit.priceRange}.
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                Efficient modern design where units share a rear wall. Reduced
+                exterior maintenance and contemporary layouts ideal for
+                first-time buyers and investors.
               </p>
-            </article>
-          ))}
-
-          <article className="mt-12">
-            <h2 className="font-heading text-2xl font-bold text-forest-900">
-              Back-to-Back vs Traditional Townhomes
-            </h2>
-            <div className="mt-4 grid gap-6 md:grid-cols-2">
-              <div className="card">
-                <h3 className="font-heading text-xl font-semibold">Back-to-Back Towns</h3>
-                <p className="mt-2 text-sm text-forest-800 leading-relaxed">
-                  Efficient modern design where units share a rear wall. Lower price entry
-                  point, reduced exterior maintenance, and contemporary layouts. Ideal for
-                  budget-conscious buyers and first-time homeowners seeking freehold ownership
-                  from the $600s.
-                </p>
-              </div>
-              <div className="card">
-                <h3 className="font-heading text-xl font-semibold">Traditional Towns</h3>
-                <p className="mt-2 text-sm text-forest-800 leading-relaxed">
-                  Classic freehold townhome layout with individual rear yard access and
-                  conventional street-facing design. More spacious configurations (2–3
-                  bedrooms) suited for families wanting traditional townhome living with
-                  room to grow.
-                </p>
-              </div>
+            </div>
+            <div className="card">
+              <h2 className="font-heading text-xl font-semibold text-forest-900">
+                Traditional Towns
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                Classic freehold layout with individual rear yard access and
+                conventional street-facing design — suited for families wanting
+                room to grow.
+              </p>
             </div>
           </article>
 
           <article className="mt-12">
-            <h2 className="font-heading text-2xl font-bold text-forest-900">
-              Deposit Structure
+            <h2 className="font-heading text-2xl font-semibold text-forest-900">
+              VIP Incentives
             </h2>
-            <p className="mt-4 text-forest-800 leading-relaxed">
-              The exact deposit structure for Cornerstone Towns has not yet been announced
-              (TBA). Primont Homes typically designs deposit schedules spread over several
-              months for manageable entry. Early VIP registrants historically receive the
-              most favorable deposit terms.{" "}
-              <Link href="/register" className="text-forest-700 underline">
-                Register for VIP access
-              </Link>{" "}
-              to secure the best terms.
-            </p>
-          </article>
-
-          <article className="mt-12">
-            <h2 className="font-heading text-2xl font-bold text-forest-900">
-              VIP Incentives for Early Buyers
-            </h2>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {VIP_INCENTIVES.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-forest-800">
-                  <span className="text-gold-500" aria-hidden="true">✓</span>
+                <li key={item} className="flex items-start gap-2 text-sm text-neutral-600">
+                  <span className="text-forest-700" aria-hidden="true">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </article>
-
-          <p className="mt-8 text-sm italic text-forest-700">
-            Pricing and floor plans are preliminary and subject to change. Register
-            for VIP access for the most current information.
-          </p>
         </div>
       </section>
 
       <section className="section-padding bg-cream-100">
-        <div className="container-site mx-auto max-w-2xl">
-          <h2 className="mb-6 text-center font-heading text-2xl font-bold text-forest-900">
-            Request Detailed Floor Plans
+        <div className="container-site mx-auto max-w-xl">
+          <h2 className="mb-2 text-center font-heading text-2xl font-semibold text-forest-900">
+            Unlock Full Floor Plans
           </h2>
+          <p className="mb-8 text-center text-sm text-neutral-500">
+            Register for VIP access to view detailed floor plans before the public launch.
+          </p>
           <div className="card">
-            <LeadForm page="floor-plans" submitLabel="Request Floor Plans" />
+            <LeadForm page="floor-plans" submitLabel="Unlock Floor Plans" />
           </div>
+          <p className="mt-6 text-center text-xs text-neutral-500">
+            Floor plans are subject to change.{" "}
+            <Link href="/register" className="text-forest-700 underline">
+              Register now
+            </Link>{" "}
+            for first access.
+          </p>
         </div>
       </section>
     </>

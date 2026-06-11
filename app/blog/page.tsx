@@ -8,7 +8,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = createPageMetadata({
   title: "Blog | Cornerstone Towns Brampton News & Guides",
   description:
-    "Expert guides and news about Cornerstone Towns Brampton by Primont Homes. Floor plans, pricing, location analysis, investment insights, and buyer guides.",
+    "Expert guides and news about Cornerstone Towns Brampton by Primont Homes. Floor plans, location analysis, investment insights, and buyer guides.",
   path: "/blog",
 });
 
