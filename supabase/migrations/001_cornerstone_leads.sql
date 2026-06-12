@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS cornerstone_leads (
   id UUID NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
-  email TEXT NOT NULL UNIQUE,
+  email TEXT NOT NULL,
   phone TEXT,
   is_realtor BOOLEAN DEFAULT false,
   is_broker BOOLEAN DEFAULT false,

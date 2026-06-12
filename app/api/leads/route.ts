@@ -135,12 +135,6 @@ export async function POST(request: NextRequest) {
     const { error } = await supabase.from("cornerstone_leads").insert(lead);
     if (error) {
       console.error("Supabase insert error:", error.message, error.code);
-      if (error.code === "23505") {
-        return NextResponse.json(
-          { error: "This email is already registered. We'll be in touch soon." },
-          { status: 409 }
-        );
-      }
       return NextResponse.json(
         { error: "Unable to process submission. Please try again." },
         { status: 503 }
