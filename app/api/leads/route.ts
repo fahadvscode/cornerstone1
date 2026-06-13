@@ -105,22 +105,55 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const phone = sanitizePhone(body.phone);
+    if (!phone) {
+      return NextResponse.json(
+        { error: "A valid phone number is required." },
+        { status: 400 }
+      );
+    }
+
+    const formVariant = sanitizeString(body.form_variant, 20);
     const unitInterest = sanitizeUnitInterest(body.unit_interest);
     const page = sanitizeOptionalString(body.page, 100);
-    const message = sanitizeOptionalString(body.message, 2000);
+    const message = sanitizeString(body.message, 2000);
+
+    if (formVariant === "simple" || formVariant === "full") {
+      if (!message) {
+        return NextResponse.json(
+          { error: "Message is required." },
+          { status: 400 }
+        );
+      }
+    }
+
+    if (formVariant === "full") {
+      if (!sanitizeBuyerType(body.buyer_type)) {
+        return NextResponse.json(
+          { error: "Buyer type is required." },
+          { status: 400 }
+        );
+      }
+      if (!unitInterest?.length) {
+        return NextResponse.json(
+          { error: "Please select at least one unit type." },
+          { status: 400 }
+        );
+      }
+    }
 
     const lead = {
       first_name,
       last_name,
       email,
-      phone: sanitizePhone(body.phone),
+      phone,
       is_realtor:
         body.is_realtor === true || body.working_with_realtor === true,
       is_broker: body.is_broker === true,
       interest: sanitizeInterest(body.interest, unitInterest),
       buyer_type: sanitizeBuyerType(body.buyer_type),
       source: "cornerstonetownsbrampton.ca",
-      last_note: buildLastNote(message, page),
+      last_note: buildLastNote(message || undefined, page),
     };
 
     const supabase = getSupabaseClient();

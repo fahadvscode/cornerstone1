@@ -31,6 +31,22 @@ export function LeadForm({
       ? UNIT_TYPES.filter((u) => formData.get(`unit_${u.slug}`) === "on").map((u) => u.name)
       : undefined;
 
+    const message = (formData.get("message") as string)?.trim() ?? "";
+
+    if (variant === "simple" || variant === "full") {
+      if (!message) {
+        setStatus("error");
+        setErrorMessage("Please enter a message.");
+        return;
+      }
+    }
+
+    if (variant === "full" && (!unitInterest || unitInterest.length === 0)) {
+      setStatus("error");
+      setErrorMessage("Please select at least one unit type.");
+      return;
+    }
+
     const payload = {
       first_name: formData.get("first_name") as string,
       last_name: formData.get("last_name") as string,
@@ -38,10 +54,11 @@ export function LeadForm({
       phone: formData.get("phone") as string,
       is_realtor: formData.get("is_realtor") === "yes",
       is_broker: formData.get("is_broker") === "yes",
-      buyer_type: (formData.get("buyer_type") as string) || undefined,
+      buyer_type: formData.get("buyer_type") as string,
       unit_interest: unitInterest,
       interest: (formData.get("interest") as string) || undefined,
-      message: (formData.get("message") as string) || undefined,
+      message: message || undefined,
+      form_variant: variant,
       page,
       website: formData.get("website") as string,
     };
@@ -89,7 +106,7 @@ export function LeadForm({
     : "mb-1 block text-sm font-medium text-forest-800";
 
   return (
-    <form onSubmit={handleSubmit} className={isHero ? "space-y-3" : "space-y-4"} noValidate>
+    <form onSubmit={handleSubmit} className={isHero ? "space-y-3" : "space-y-4"}>
       {headline && (
         <h3 className="font-heading text-2xl font-semibold text-forest-900">
           {headline}
@@ -164,11 +181,12 @@ export function LeadForm({
       <div className={`grid gap-3 ${isHero ? "sm:grid-cols-2" : "gap-4 sm:grid-cols-2"}`}>
         <div>
           <label htmlFor="is_broker" className={labelClass}>
-            Are you a broker?
+            Are you a broker? *
           </label>
           <select
             id="is_broker"
             name="is_broker"
+            required
             className={isHero ? inputClass : "w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"}
           >
             <option value="no">No</option>
@@ -178,11 +196,12 @@ export function LeadForm({
         {variant === "full" && (
           <div>
             <label htmlFor="is_realtor" className="mb-1 block text-sm font-medium text-forest-800">
-              Are you a realtor?
+              Are you a realtor? *
             </label>
             <select
               id="is_realtor"
               name="is_realtor"
+              required
               className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
             >
               <option value="no">No</option>
@@ -197,11 +216,12 @@ export function LeadForm({
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <label htmlFor="buyer_type" className="mb-1 block text-sm font-medium text-forest-800">
-                Buying as investor or end-user?
+                Buying as investor or end-user? *
               </label>
               <select
                 id="buyer_type"
                 name="buyer_type"
+                required
                 className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
               >
                 <option value="end-user">End-User</option>
@@ -213,7 +233,7 @@ export function LeadForm({
 
           <fieldset>
             <legend className="mb-2 text-sm font-medium text-forest-800">
-              What unit type interests you?
+              What unit type interests you? *
             </legend>
             <div className="grid gap-2 sm:grid-cols-2">
               {UNIT_TYPES.map((unit) => (
@@ -234,11 +254,12 @@ export function LeadForm({
       {variant !== "hero" && (
         <div>
           <label htmlFor="message" className="mb-1 block text-sm font-medium text-forest-800">
-            {variant === "full" ? "Message / Comments" : "Message (optional)"}
+            Message *
           </label>
           <textarea
             id="message"
             name="message"
+            required
             rows={variant === "full" ? 4 : 2}
             className="w-full rounded-md border border-cream-200 bg-white px-4 py-2.5 text-forest-900 focus:border-forest-700 focus:outline-none focus:ring-1 focus:ring-forest-700"
           />
