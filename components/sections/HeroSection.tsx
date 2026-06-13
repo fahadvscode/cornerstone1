@@ -100,7 +100,7 @@ export function HeroSection() {
                 </ul>
 
                 <LeadForm
-                  variant="full"
+                  variant="hero"
                   page="homepage-hero"
                   submitLabel="Register for VIP Access"
                 />
