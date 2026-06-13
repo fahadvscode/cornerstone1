@@ -21,7 +21,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,168,76,0.12),transparent_55%)]" />
 
       <div className="container-site relative z-10 flex min-h-[min(100vh,920px)] items-center py-16 md:py-20">
-        <div className="grid w-full items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+        <div className="grid w-full items-start gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-400 backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400" aria-hidden="true" />
@@ -84,7 +84,7 @@ export function HeroSection() {
                 </p>
               </div>
 
-              <div className="space-y-4 px-6 py-5">
+              <div className="max-h-[min(85vh,820px)] space-y-4 overflow-y-auto px-6 py-5">
                 <ul className="grid gap-2 sm:grid-cols-2">
                   {HERO_PERKS.map((item) => (
                     <li
@@ -100,7 +100,7 @@ export function HeroSection() {
                 </ul>
 
                 <LeadForm
-                  variant="hero"
+                  variant="full"
                   page="homepage-hero"
                   submitLabel="Register for VIP Access"
                 />

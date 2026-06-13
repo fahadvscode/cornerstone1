@@ -110,7 +110,7 @@ export default function FloorPlansPage() {
             Register for VIP access to view detailed floor plans before the public launch.
           </p>
           <div className="card">
-            <LeadForm page="floor-plans" submitLabel="Unlock Floor Plans" />
+            <LeadForm variant="full" page="floor-plans" submitLabel="Unlock Floor Plans" />
           </div>
           <p className="mt-6 text-center text-xs text-neutral-500">
             Floor plans are subject to change.{" "}
